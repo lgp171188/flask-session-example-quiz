@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">Quiz - Flask session example</h3>
+      </div>
+      <hr/>
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-danger">
+        {{ message }}
+      </div>
+      {% endfor %}
+      <form class="form" action="." method="post">
+        <div class="form-group">
+          <span class="col-lg-2">{{ question_number }}. {{ question }}</span>
+          <div class="col-lg-2">
+            <input type="text" name="answer" placeholder="Answer"
+                   class="form-control">
+          </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
